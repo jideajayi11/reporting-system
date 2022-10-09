@@ -2,6 +2,7 @@ import envConfig from "dotenv/config"; envConfig;
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
+import knexPg from "./dbConnections/knexPg";
 
 if (!process.env.PORT) {
   process.exit(1);
@@ -18,4 +19,7 @@ app.use(express.json());
 
 app.listen(PORT, () => console.log(`magic happens at ${PORT}`));
 
-app.get("/", (req:Request, res:Response):void => { res.send("getting started with .ts") });
+app.get("/", async(req:Request, res:Response):Promise<any> => {
+  const users = await knexPg('users').select(['id', 'name']);
+  res.json(users);
+});
