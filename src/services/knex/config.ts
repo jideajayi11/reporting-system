@@ -1,4 +1,5 @@
 import { Knex } from "knex";
+import envConfig from "dotenv/config"; envConfig;
 
 const {
   DB_HOST: host,
