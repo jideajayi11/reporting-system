@@ -19,6 +19,7 @@ exports.seed = async function(knex) {
       addedBy: 1,
       departmentId: 1,
       roleId: 1,
+      password: 'qwerty',
     }
   ]);
   await knex('roles').insert([

@@ -5,6 +5,8 @@ export const users = (table: Knex.TableBuilder) => {
   table.string("title");
   table.string("fullname").notNullable();
   table.integer("addedBy").notNullable();
+  table.string("password");
+  table.boolean("resetPassword").defaultTo(true);
   table.timestamps(true, true);
 }
 
