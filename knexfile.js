@@ -15,10 +15,10 @@ var config = {
     searchPath: ['knex', 'public'],
     migrations: {
         tableName: 'knex_migrations',
-        directory: './db/migrations'
+        directory: './src/services/knex/migrations'
     },
     seeds: {
-        directory: './db/seeds'
+        directory: './src/services/knex/seeds'
     }
 };
 exports["default"] = config;
