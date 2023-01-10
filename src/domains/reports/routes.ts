@@ -1,26 +1,20 @@
-import controller, { userLogin } from "./index";
-import auth, { encryptPayloadPassword } from "../../middlewares/auth";
+import controller from "./index";
+import auth from "../../middlewares/auth";
 
-const path = "/user";
+const path = "/report";
 
 export default [
   {
     method: "post",
     path: `${path}`,
-    middlewares: [encryptPayloadPassword],
+    middlewares: [auth],
     controller: controller.createDomain,
   },
   {
     method: "put",
     path: `${path}`,
-    middlewares: [auth, encryptPayloadPassword],
+    middlewares: [auth],
     controller: controller.updateDomain,
-  },
-  {
-    method: "post",
-    path: `${path}/login`,
-    middlewares: [],
-    controller: userLogin,
   },
   {
     method: "get",

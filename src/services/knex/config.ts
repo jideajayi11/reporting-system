@@ -18,6 +18,7 @@ const config:Knex.Config = {
     password,
     database,
   },
+  // connecton: process.env.DB_CONN_STRING,
   searchPath: ['knex', 'public'],
   migrations: {
     tableName: 'knex_migrations',

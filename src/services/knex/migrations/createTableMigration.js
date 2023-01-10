@@ -1,15 +1,10 @@
-// import { users, departments, roles, reportFields, reports } from "../../src/services/knex/schema";
 const {
   users,
-  usersAssoc,
   departments,
-  departmentsAssoc,
   roles,
   reportFields,
-  reportFieldsAssoc,
   reports,
-  reportsAssoc,
-} = require("../../src/services/knex/schema");
+} = require("../schema");
 
 /**
  * @param { import("knex").Knex } knex
@@ -22,10 +17,6 @@ exports.up = function(knex) {
     .createTable('roles', roles)
     .createTable('reportFields', reportFields)
     .createTable('reports', reports)
-    .alterTable('users', usersAssoc)
-    .alterTable('departments', departmentsAssoc)
-    .alterTable('reportFields', reportFieldsAssoc)
-    .alterTable('reports', reportsAssoc);
 };
 
 /**

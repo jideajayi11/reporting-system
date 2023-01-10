@@ -16,6 +16,7 @@ exports.seed = async function(knex) {
     {
       id: 1,
       fullname: 'my s-admin',
+      email: 'jideajayi11@gmail.com',
       addedBy: 1,
       departmentId: 1,
       roleId: 1,
